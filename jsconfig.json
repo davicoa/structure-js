@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "baseUrl": "src",
+        "paths": {
+            "containers/*": [
+                "containers/*"
+            ],
+            "constants/*": [
+                "constants/*"
+            ],
+            "layouts/*": [
+                "layouts/*"
+            ],
+            "element/*": [
+                "components/elements/*"
+            ],
+            "components/*": [
+                "components/*"
+            ],
+            "pages/*": [
+                "pages/*"
+            ],
+            "helper/*": [
+                "helper/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
