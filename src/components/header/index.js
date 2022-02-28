@@ -29,6 +29,7 @@ const AppBar = styled(MuiAppBar, {
 }));
 
 const Header = ({ handleDrawerOpen, open, Logout }) => {
+    console.log(Logout);
     return (
         <AppBar position="fixed" open={open}>
             <Toolbar>

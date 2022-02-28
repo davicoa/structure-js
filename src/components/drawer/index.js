@@ -33,7 +33,7 @@ const closedMixin = (theme) => ({
     overflowX: 'hidden',
     width: `calc(${theme.spacing(7)} + 1px)`,
     [theme.breakpoints.up('sm')]: {
-        width: `calc(${theme.spacing(9)} + 1px)`,
+        width: `calc(${theme.spacing(7)} + 1px)`,
     },
 });
 
@@ -84,16 +84,6 @@ const MiniDrawer = ({ handleDrawerClose, open }) => {
                 ))}
             </List>
             <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
         </Drawer>
     );
 }
