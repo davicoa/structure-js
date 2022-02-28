@@ -1,10 +1,23 @@
-import { createTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 
-export default createTheme(() => ({
+const useStyles = makeStyles({
     container: {
-        backgroundColor: '#2E2E2E',
-        flexShrink: 0,
-        bottom: 0,
-        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh',
+        width: '100%',
+        flexDirection: ' column',
+        boxSizing: 'content-box'
     },
-}));
+    main: {
+        flexGrow: 1,
+        p: 1,
+        height: '100%',
+        width: '100%',
+        backgroundColor: 'gray',
+        boxSizing: 'border-box'
+    }
+});
+
+export default useStyles;

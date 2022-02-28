@@ -4,19 +4,21 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import colors from 'constants/colors'
 
-const Login = ({ SingIn }) => {
+import BasicButton from 'components/elements/button'
+
+const Login = ({ login }) => {
     return (
         <Grid sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', width: '100%' }}>
             <Grid sx={{ flexDirection: 'column', }}>
                 <Typography styles={{ color: colors.secondary }}>
                     Login
                 </Typography>
-                <button onClick={SingIn}>logear</button>
+                <BasicButton onClick={login} tittle={'Login'} />
             </Grid>
         </Grid>
     )
 }
 Login.propTypes = {
-    SingIn: PropTypes.func,
+    login: PropTypes.func,
 };
 export default Login

@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }) => {
     return <>
         {isAuthenticated
             ? children
-            : <Login SingIn={login} />}
+            : <Login login={login} />}
     </>
 }
 PrivateRoute.propTypes = {

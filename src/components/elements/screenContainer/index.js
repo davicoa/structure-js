@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const ScreenContainer = ({ children, props }) => {
     return (
-        <div style={{ backgroundColor: 'blue', minHeight: '100%', minWidth: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{ minHeight: '100%', minWidth: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             {children}
         </div>
     )

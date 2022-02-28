@@ -14,7 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'components/elements/navLink';
 
 const drawerWidth = 240;
 
@@ -76,10 +76,7 @@ const MiniDrawer = ({ handleDrawerClose, open }) => {
             </DrawerHeader>
             <Divider />
             <List>
-                <NavLink className={({ isActive }) => {
-                    return isActive ? 'is-active' : undefined;
-                }} to={'/'}
-                >
+                <NavLink to={'/'}>
                     <ListItem button key={'Home'}>
                         <ListItemIcon>
                             <MailIcon />
@@ -87,10 +84,7 @@ const MiniDrawer = ({ handleDrawerClose, open }) => {
                         <ListItemText primary={'Home'} />
                     </ListItem>
                 </NavLink>
-                <NavLink className={({ isActive }) => {
-                    return isActive ? 'is-active' : undefined;
-                }} to={'/penel'}
-                >
+                <NavLink to={'/penel'}>
                     <ListItem button key={'Panel'}>
                         <ListItemIcon>
                             <InboxIcon />

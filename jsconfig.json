@@ -14,9 +14,6 @@
             "layouts/*": [
                 "layouts/*"
             ],
-            "elements/*": [
-                "components/elements/*"
-            ],
             "components/*": [
                 "components/*"
             ],
