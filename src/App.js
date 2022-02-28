@@ -8,7 +8,8 @@ import {
   useRoutes,
   Outlet
 } from 'react-router-dom';
-import PrivateRoute from 'helper/private';
+import { AuthProvider } from 'context/useAuth';
+import PrivateRoute from 'helper/private'
 
 import routes from './router/routes';
 import { ThemeProvider } from '@mui/material/styles'
@@ -19,9 +20,11 @@ function App() {
   const element = useRoutes(routes);
   return (<>
     <ThemeProvider theme={theme}>
-      <PrivateRoute>
-        {element}
-      </PrivateRoute>
+      <AuthProvider>
+        <PrivateRoute>
+          {element}
+        </PrivateRoute>
+      </AuthProvider>
       <Outlet />
     </ThemeProvider>
   </>

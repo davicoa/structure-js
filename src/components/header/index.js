@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import MuiAppBar from '@mui/material/AppBar';
@@ -7,6 +7,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { AuthContext } from 'context/useAuth'
 
 const drawerWidth = 240;
 
@@ -28,8 +29,9 @@ const AppBar = styled(MuiAppBar, {
     }),
 }));
 
-const Header = ({ handleDrawerOpen, open, Logout }) => {
-    console.log(Logout);
+const Header = ({ handleDrawerOpen, open }) => {
+    const { logout } = useContext(AuthContext)
+
     return (
         <AppBar position="fixed" open={open}>
             <Toolbar>
@@ -46,15 +48,14 @@ const Header = ({ handleDrawerOpen, open, Logout }) => {
                     <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" noWrap component="div">
-                    Mini variant drawer
+                    Drawer
                 </Typography>
-                <button style={{ marginLeft: '2rem' }} onClick={Logout}>Logout</button>
+                <button style={{ marginLeft: '2rem' }} onClick={logout}>Logout</button>
             </Toolbar>
         </AppBar>
     );
 }
 Header.propTypes = {
-    Logout: PropTypes.func,
     handleDrawerOpen: PropTypes.func,
     open: PropTypes.bool,
 };

@@ -14,6 +14,8 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
+import { NavLink } from 'react-router-dom';
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -74,14 +76,28 @@ const MiniDrawer = ({ handleDrawerClose, open }) => {
             </DrawerHeader>
             <Divider />
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
+                <NavLink className={({ isActive }) => {
+                    return isActive ? 'is-active' : undefined;
+                }} to={'/'}
+                >
+                    <ListItem button key={'Home'}>
                         <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                            <MailIcon />
                         </ListItemIcon>
-                        <ListItemText primary={text} />
+                        <ListItemText primary={'Home'} />
                     </ListItem>
-                ))}
+                </NavLink>
+                <NavLink className={({ isActive }) => {
+                    return isActive ? 'is-active' : undefined;
+                }} to={'/penel'}
+                >
+                    <ListItem button key={'Panel'}>
+                        <ListItemIcon>
+                            <InboxIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={'Panel'} />
+                    </ListItem>
+                </NavLink>
             </List>
             <Divider />
         </Drawer>

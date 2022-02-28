@@ -1,18 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types';
 import Login from 'pages/login';
+import { AuthContext } from 'context/useAuth'
 
 const PrivateRoute = ({ children }) => {
-    const [isLogin, setIsLogin] = useState(false)
-
-    const SingIn = () => {
-        setIsLogin(true)
-    }
+    const { isAuthenticated, login } = useContext(AuthContext)
 
     return <>
-        {isLogin
+        {isAuthenticated
             ? children
-            : <Login SingIn={SingIn} />}
+            : <Login SingIn={login} />}
     </>
 }
 PrivateRoute.propTypes = {

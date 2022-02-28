@@ -2,6 +2,9 @@
     "compilerOptions": {
         "baseUrl": "src",
         "paths": {
+            "context/*": [
+                "context/*"
+            ],
             "containers/*": [
                 "containers/*"
             ],

@@ -1,7 +1,5 @@
 
 import React from 'react'
-import PropTypes from 'prop-types'
-
 import { Outlet } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import { styled } from '@mui/material/styles'
@@ -17,7 +15,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     ...theme.mixins.toolbar,
 }));
 
-const LayoutMain = ({ Logout }) => {
+const LayoutMain = () => {
     const [open, setOpen] = React.useState(false);
 
     const handleDrawerOpen = () => {
@@ -30,7 +28,7 @@ const LayoutMain = ({ Logout }) => {
 
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', width: '100%', flexDirection: 'column', boxSizing: 'content-box' }}>
-            <Header handleDrawerOpen={handleDrawerOpen} open={open} Logout={Logout} />
+            <Header handleDrawerOpen={handleDrawerOpen} open={open} />
             <Drawer handleDrawerClose={handleDrawerClose} open={open} />
             <Box component="main" sx={{ flexGrow: 1, p: 1, paddingLeft: !open ? '4rem' : '15.5rem', height: '100%', width: '100%', backgroundColor: 'gray', boxSizing: 'border-box' }}>
                 <DrawerHeader />
@@ -40,9 +38,5 @@ const LayoutMain = ({ Logout }) => {
         </Box>
     );
 }
-
-LayoutMain.propTypes = {
-    Logout: PropTypes.func,
-};
 
 export default LayoutMain

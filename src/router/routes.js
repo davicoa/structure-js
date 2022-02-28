@@ -1,5 +1,7 @@
 import LayoutMain from '../layouts/LayoutMain';
 import Home from '../pages/home';
+import Panel from '../pages/panel';
+
 import Error404 from '../pages/error404';
 
 const routes = [
@@ -11,6 +13,11 @@ const routes = [
                 index: true,
                 path: '/',
                 element: <Home />
+            },
+            {
+                index: true,
+                path: '/penel',
+                element: <Panel />
             },
             /*  {
                  path: '/courses',
