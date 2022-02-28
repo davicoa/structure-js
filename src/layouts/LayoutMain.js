@@ -18,6 +18,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 const LayoutMain = () => {
     const styles = useStyles()
+
     const [open, setOpen] = React.useState(false)
     const handleDrawerOpen = () => {
         setOpen(true);

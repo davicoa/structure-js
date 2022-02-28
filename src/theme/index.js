@@ -11,31 +11,38 @@ const Theme = createTheme({
       main: colors.primary,
     },
     secondary: {
-      main: '#FFCE76',
+      main: colors.secondary,
     },
-    backgroundBlack: {
-      main: '#5F5C5E',
+    background: {
+      main: colors.background,
     },
     success: {
-      main: '#1C8269',
+      main: colors.success,
     },
     error: {
-      main: '#D1001F',
+      main: colors.error,
     },
     tonalOffset: 0.2,
   },
-  paletteCustom: {
-    backgroundBlack: {
-      main: '#000838',
-    },
-    backgroundGrey: {
-      main: '#B5B2B2',
-    },
+  '&$selected': {
+    color: 'white',
+    '& .MuiListItemIcon-root': {
+      color: 'white'
+    }
   },
-  MuiTableContainer: {
-    root: {
-      backgroundColor: 'red',
-    },
+  '&$selected:hover': {
+    backgroundColor: 'purple',
+    color: 'white',
+    '& .MuiListItemIcon-root': {
+      color: 'white'
+    }
+  },
+  '&:hover': {
+    backgroundColor: 'blue',
+    color: 'white',
+    '& .MuiListItemIcon-root': {
+      color: 'white'
+    }
   },
 })
 

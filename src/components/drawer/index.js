@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 
@@ -62,11 +62,20 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
             ...closedMixin(theme),
             '& .MuiDrawer-paper': closedMixin(theme),
         }),
+        '& .MuiPaper-root': {
+            border: 'none',
+            boxShadow: 'none',
+        }
     }),
 );
 
 const MiniDrawer = ({ handleDrawerClose, open }) => {
     const theme = useTheme();
+    const [selectedIndex, setSelectedIndex] = useState(1);
+
+    const handleListItemClick = (event, index) => {
+        setSelectedIndex(index);
+    };
     return (
         <Drawer variant="permanent" open={open}>
             <DrawerHeader>
@@ -77,15 +86,15 @@ const MiniDrawer = ({ handleDrawerClose, open }) => {
             <Divider />
             <List>
                 <NavLink to={'/'}>
-                    <ListItem button key={'Home'}>
-                        <ListItemIcon>
+                    <ListItem button key={'Home'} selected={selectedIndex === 0} onClick={(event) => handleListItemClick(event, 0)}>
+                        <ListItemIcon >
                             <MailIcon />
                         </ListItemIcon>
                         <ListItemText primary={'Home'} />
                     </ListItem>
                 </NavLink>
-                <NavLink to={'/penel'}>
-                    <ListItem button key={'Panel'}>
+                <NavLink to={'/penel'} >
+                    <ListItem button key={'Panel'} selected={selectedIndex === 1} onClick={(event) => handleListItemClick(event, 1)}>
                         <ListItemIcon>
                             <InboxIcon />
                         </ListItemIcon>
