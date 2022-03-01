@@ -22,6 +22,12 @@
             ],
             "helper/*": [
                 "helper/*"
+            ],
+            "assets/*": [
+                "assets/*"
+            ],
+            "services/*": [
+                "services/*"
             ]
         }
     },

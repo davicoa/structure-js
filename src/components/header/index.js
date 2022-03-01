@@ -4,10 +4,13 @@ import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+
 import { AuthContext } from 'context/useAuth'
+
+import { ReactComponent as LogoWhite } from 'assets/svg/logo/logo_white.svg'
 
 const drawerWidth = 240;
 
@@ -33,7 +36,7 @@ const Header = ({ handleDrawerOpen, open }) => {
     const { logout } = useContext(AuthContext)
 
     return (
-        <AppBar position="fixed" open={open}>
+        <AppBar position="fixed" open={open} >
             <Toolbar>
                 <IconButton
                     color="inherit"
@@ -47,9 +50,9 @@ const Header = ({ handleDrawerOpen, open }) => {
                 >
                     <MenuIcon />
                 </IconButton>
-                <Typography variant="h6" noWrap component="div">
-                    Drawer
-                </Typography>
+                <div style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', height: '3rem', padding: '1rem' }}>
+                    <LogoWhite />
+                </div>
                 <button style={{ marginLeft: '2rem' }} onClick={logout}>Logout</button>
             </Toolbar>
         </AppBar>

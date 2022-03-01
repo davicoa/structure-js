@@ -3,9 +3,12 @@ export default {
     //
     primary: '#001176',
     secondary: '#000838',
-    background: '#E5E5E5',
+    // alerts
     success: '#417351',
     error: '#C91C1C',
     //
-    backgroundGrey: '#B5B2B2'
+    background: '#E5E5E5',
+    backgroundGrey: '#B5B2B2',
+    // text
+    white: '#FFFFFF'
 }

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types';
-import Login from 'pages/login';
+import Login from 'pages/auth/login';
 import { AuthContext } from 'context/useAuth'
 
 const PrivateRoute = ({ children }) => {

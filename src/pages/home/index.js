@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography'
 import colors from 'constants/colors'
 import ScreenContainer from 'components/elements/screenContainer'
 import Grid from '@mui/material/Grid'
+
 const Home = () => {
     return (
         <ScreenContainer>

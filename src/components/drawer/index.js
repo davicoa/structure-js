@@ -13,6 +13,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import Tooltip from '@mui/material/Tooltip';
 
 import { NavLink } from 'components/elements/navLink';
 
@@ -43,8 +44,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
+    // padding TOP 1.09
+    padding: theme.spacing(1.09, 1),
     ...theme.mixins.toolbar,
 }));
 
@@ -69,6 +70,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
+const StyledTooltip = styled(props => (
+    <Tooltip classes={{ popper: props.className }} {...props} />
+))`
+    & .MuiTooltip-tooltip {
+      color: #FFFF;
+    }
+`;
+
 const MiniDrawer = ({ handleDrawerClose, open }) => {
     const theme = useTheme();
     const [selectedIndex, setSelectedIndex] = useState(1);
@@ -87,17 +96,21 @@ const MiniDrawer = ({ handleDrawerClose, open }) => {
             <List>
                 <NavLink to={'/'}>
                     <ListItem button key={'Home'} selected={selectedIndex === 0} onClick={(event) => handleListItemClick(event, 0)}>
-                        <ListItemIcon >
-                            <MailIcon />
-                        </ListItemIcon>
+                        <StyledTooltip title="Home" arrow placement="right">
+                            <ListItemIcon >
+                                <MailIcon />
+                            </ListItemIcon>
+                        </StyledTooltip>
                         <ListItemText primary={'Home'} />
                     </ListItem>
                 </NavLink>
                 <NavLink to={'/penel'} >
                     <ListItem button key={'Panel'} selected={selectedIndex === 1} onClick={(event) => handleListItemClick(event, 1)}>
-                        <ListItemIcon>
-                            <InboxIcon />
-                        </ListItemIcon>
+                        <StyledTooltip title="Panel" arrow placement="right">
+                            <ListItemIcon>
+                                <InboxIcon />
+                            </ListItemIcon>
+                        </StyledTooltip>
                         <ListItemText primary={'Panel'} />
                     </ListItem>
                 </NavLink>
